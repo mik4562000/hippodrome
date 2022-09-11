@@ -13,12 +13,12 @@ public class HorseTest {
     private static Horse horse;
 
     @Test
-    void HorseIfNameIsNullShouldThrowIllegalArgumentException() {
+    void horseIfNameIsNullShouldThrowIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse(null, 15));
     }
 
     @Test
-    void HorseIfNameIsNullShouldMessageBeAboutName() {
+    void horseIfNameIsNullShouldMessageBeAboutName() {
         Throwable actualException = Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse(null, 15));
 
         Assertions.assertEquals(actualException.getMessage(), "Name cannot be null.");
@@ -26,37 +26,37 @@ public class HorseTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "\t"})
-    void HorseIfNameIsEmptyStringShouldThrowIllegalArgumentException(String argument) {
+    void horseIfNameIsEmptyStringShouldThrowIllegalArgumentException(String argument) {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse(argument, 15));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "\t"})
-    void HorseIfNameIsEmptyStringShouldMessageBeAboutBlankName(String argument) {
+    void horseIfNameIsEmptyStringShouldMessageBeAboutBlankName(String argument) {
         Throwable actualException = Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse(argument, 15));
 
         Assertions.assertEquals(actualException.getMessage(), "Name cannot be blank.");
     }
 
     @Test
-    void HorseIfSpeedIsNegativeShouldThrowIllegalArgumentException() {
+    void horseIfSpeedIsNegativeShouldThrowIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse("testName", -10));
     }
 
     @Test
-    void HorseIfSpeedIsNegativeShouldMessageBeAboutNegativeSpeed() {
+    void horseIfSpeedIsNegativeShouldMessageBeAboutNegativeSpeed() {
         Throwable actualException = Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse("testName", -10));
 
         Assertions.assertEquals(actualException.getMessage(), "Speed cannot be negative.");
     }
 
     @Test
-    void HorseIfDistanceIsNegativeShouldThrowIllegalArgumentException() {
+    void horseIfDistanceIsNegativeShouldThrowIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse("testName", 15, -100));
     }
 
     @Test
-    void HorseIfDistanceIsNegativeShouldMessageBeAboutNegativeDistance() {
+    void horseIfDistanceIsNegativeShouldMessageBeAboutNegativeDistance() {
         Throwable actualException = Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse("testName", 15, -100));
 
         Assertions.assertEquals(actualException.getMessage(), "Distance cannot be negative.");
