@@ -26,7 +26,7 @@ class HippodromeTest {
     void hippodromeIfListIsNullShouldMessageBeAboutHorses() {
         Throwable actualException = Assertions.assertThrows(IllegalArgumentException.class, () -> new Hippodrome(null));
 
-        Assertions.assertEquals(actualException.getMessage(), "Horses cannot be null.");
+        Assertions.assertEquals("Horses cannot be null.", actualException.getMessage());
     }
 
     @Test
@@ -37,7 +37,7 @@ class HippodromeTest {
     @Test
     void hippodromeIfListIsEmptyShouldMessageBeAboutHorses() {
         Throwable actualException = Assertions.assertThrows(IllegalArgumentException.class, () -> new Hippodrome(horses));
-        Assertions.assertEquals(actualException.getMessage(), "Horses cannot be empty.");
+        Assertions.assertEquals("Horses cannot be empty.", actualException.getMessage());
     }
 
     @Test
